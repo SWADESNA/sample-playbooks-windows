@@ -1,0 +1,13 @@
+---
+- name: Test windows
+  hosts: all
+  tasks:
+    - name: ping
+      win_ping:
+    - name: Ensure user Bob is present
+      win_user:
+        name: Bob
+        password: Bob@1234
+        state: present
+        groups:
+          - Users
